@@ -72,5 +72,6 @@ Original description: Can you find the correct license for me ?
   return result;
 }}```
 
+
 # Solution script
-Сценарий реализации решения можно найти [здесь].(https://github.com/silver12-A/Writeups/blob/main/CTF_2022/BDSec_CTF_2022/Reverse%20Engineering/BDSec%20License%20Checker%200x1/solver.py)
+Сценарий реализации решения можно найти [здесь](https://github.com/silver12-A/Writeups/blob/main/CTF_2022/BDSec_CTF_2022/Reverse%20Engineering/BDSec%20License%20Checker%200x1/solver.py).
