@@ -73,3 +73,6 @@ Original description: Can you find the correct license for me ?
 
 # Solution script
 Сценарий реализации решения можно найти [здесь](https://github.com/silver12-A/Writeups/blob/main/CTF_2022/BDSec_CTF_2022/Reverse%20Engineering/BDSec%20License%20Checker%200x1/solver.py).
+
+
+flag is: BDSEC{1c3n53_ch3ck3r_0x1_2022}
