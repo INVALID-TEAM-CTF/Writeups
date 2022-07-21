@@ -9,11 +9,9 @@ Original description: Can you find the correct license for me ?
 У нас есть [программа](https://github.com/silver12-A/Writeups/blob/main/CTF_2022/BDSec_CTF_2022/Reverse%20Engineering/BDSec%20License%20Checker%200x1/bdsec_license_checker_1.out), которая запрашивает ввод лицензии.
 
 # Analyzing IDA PRO
-Анализ приводит к функции `ns_2(const char *a1)` где необходимо пройти условия
+Анализ приводит к функции `ns_2(const char *a1)` где необходимо пройти условия:
 
-```{си} {int __fastcall ns_2(const char *a1)
-{
-  int __fastcall ns_2(const char *a1)
+```int __fastcall ns_2(const char *a1)
 {
   int result; // eax
   int v2; // [rsp+14h] [rbp-ACh]
@@ -70,8 +68,8 @@ Original description: Can you find the correct license for me ?
   else
     result = puts("Invalid license key. Please try again.");
   return result;
-}}```
-
+}
+```
 
 # Solution script
 Сценарий реализации решения можно найти [здесь](https://github.com/silver12-A/Writeups/blob/main/CTF_2022/BDSec_CTF_2022/Reverse%20Engineering/BDSec%20License%20Checker%200x1/solver.py).
