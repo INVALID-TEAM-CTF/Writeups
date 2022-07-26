@@ -27,11 +27,37 @@ Original description: this math test is hard
 }
 ```
 Например:
+
 ![image](https://user-images.githubusercontent.com/55994705/180990331-af35757f-7d61-4a46-a899-51db647829f1.png)
 
 
-# Solution script
-Сценарий реализации решения можно найти [здесь](https://github.com/silver12-A/Writeups/blob/main/CTF_2022/BDSec_CTF_2022/Reverse%20Engineering/BDSec%20License%20Checker%200x1/solver.py).
+Посмотрив на функцию `grade_test()`
 
+```int grade_test()
+{
+  int i; // [rsp+8h] [rbp-8h]
+  unsigned int v2; // [rsp+Ch] [rbp-4h]
 
-flag is: BDSEC{1c3n53_ch3ck3r_0x1_2022}
+  v2 = 0;
+  for ( i = 0; i < NUM_Q; ++i )
+  {
+    if ( submitted[i] == answers[i] )
+      ++v2;
+  }
+  printf("You got %d out of 10 right!\n", v2);
+  if ( v2 != 10 )
+    return puts("If you get a 10 out of 10, I will give you the flag!");
+  puts("Wow! That's a perfect score!");
+  puts("Here's the flag:");
+  return generate_flag();
+}
+```
+
+Ага, есть массив `answers[i]`, с которым сравнивается наш ввод.
+
+![image](https://user-images.githubusercontent.com/55994705/180990827-669303a8-52c3-4748-9994-ff72d1d658da.png)
+
+# Solution
+Введем такие же числа и получим 
+
+flag is: `LITCTF{y0u_must_b3_gr8_@_m4th_i_th0ught_th4t_t3st_was_imp0ss1bl3!}`
