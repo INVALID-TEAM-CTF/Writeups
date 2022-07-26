@@ -31,7 +31,7 @@ Original description: this math test is hard
 ![image](https://user-images.githubusercontent.com/55994705/180990331-af35757f-7d61-4a46-a899-51db647829f1.png)
 
 
-Посмотрив на функцию `grade_test()`
+Посмотрим на функцию `grade_test()`
 
 ```int grade_test()
 {
