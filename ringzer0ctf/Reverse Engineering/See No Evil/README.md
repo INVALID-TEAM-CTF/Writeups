@@ -10,7 +10,11 @@ See No Evil 1,2,3,4,5
 
 на 
 
-'''.rdata:0000000140029898 Format          db 'Your flag is at   %s    ',0Ah,0'''
+'''
+.rdata:0000000140029898 Format          db 'Your flag is at   %s    ',0Ah,0
+
+'''
+
 
 тем самым получить всле флаги:
 
