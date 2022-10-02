@@ -106,9 +106,13 @@ public class Sekai
 2. Первые 6 символов="SEKAI{";
 3. Последний символ="}";
 4. Sekai.length=6(видим это в конце кода);
-5. Переменная substring2 содержит строки, которые находяться между скобками {   }
+5. Переменная substring2 содержит строки, которые находяться между скобками SEKAI{   };
+6. Вызывается медот `solve(substring2)`.
+7. В конце класса происходит сравнение со строкой `oz]{R]3l]]B#50es6O4tL23Etr3c10_F4TD2`. Методы `encrypt(getArray(transform, 0, 5), 2)` `encrypt(getArray(transform, 1, 4), 1)` `encrypt(getArray(transform, 2, 3), 0)` возвращают строки, которые конкатенируются друг с другом.
 
 # Solution script
+Для решения вызова используем z3-solver.
+Перепишем действия, которые выполняются в методе solve и зададим условия.
 Сценарий реализации решения можно найти [здесь](https://github.com/silver12-A/Writeups/blob/main/CTF_2022/BDSec_CTF_2022/Reverse%20Engineering/BDSec%20License%20Checker%200x1/solver.py).
 
 
