@@ -6,68 +6,102 @@ Score: 100
 Original description: Welcome to the first lab of Course ML10001 from Sekai University! The Lab 1 assignment should be pretty easy...
 
 # Introduction
-У нас есть [файл.class](https://github.com/silver12-A/Writeups/blob/main/CTF_2022/BDSec_CTF_2022/Reverse%20Engineering/BDSec%20License%20Checker%200x1/bdsec_license_checker_1.out), которая запрашивает ввод лицензии.
+У нас есть [файл.class](https://github.com/INVALID-TEAM-CTF/Writeups/blob/main/CTF_2022/SekaiCTF%202022/Reverse%20Engineering/Matrix%20Lab%201/Matrix_Lab_1.class).
 
-# Analyzing IDA PRO
-Анализ приводит к функции `ns_2(const char *a1)` где необходимо пройти условия:
+.class относится к java. Воспользуемся онлайн [декомпилятором](http://www.javadecompilers.com/)
 
-```int __fastcall ns_2(const char *a1)
+# Анализ кода
+
+```import java.util.Scanner;
+
+// 
+// Decompiled by Procyon v0.5.36
+// 
+
+public class Sekai
 {
-  int result; // eax
-  int v2; // [rsp+14h] [rbp-ACh]
-  int i; // [rsp+18h] [rbp-A8h]
-  int v4[34]; // [rsp+20h] [rbp-A0h]
-  unsigned __int64 v5; // [rsp+A8h] [rbp-18h]
-
-  v5 = __readfsqword(0x28u);
-  if ( strlen(a1) > 0x1F || strlen(a1) <= 0x1E )
-    return puts("Invalid license key. Please try again.");
-  v4[0] = 71;
-  v4[1] = 91;
-  v4[2] = 43;
-  v4[3] = 101;
-  v4[4] = 81;
-  v4[5] = 326;
-  v4[6] = 806;
-  v4[7] = 99;
-  v4[8] = 104;
-  v4[9] = 20;
-  v4[10] = 16;
-  v4[11] = 40;
-  v4[12] = 20;
-  v4[13] = 64;
-  v4[14] = 104;
-  v4[15] = 406;
-  v4[16] = 20;
-  v4[17] = 104;
-  v4[18] = 706;
-  v4[19] = 20;
-  v4[20] = 416;
-  v4[21] = 64;
-  v4[22] = 89;
-  v4[23] = 26;
-  v4[24] = 99;
-  v4[25] = 64;
-  v4[26] = 10;
-  v4[27] = 89;
-  v4[28] = 10;
-  v4[29] = 10;
-  v4[30] = 526;
-  v2 = 0;
-  for ( i = 0; i < strlen(a1); ++i )
-  {
-    if ( (unsigned int)ns_1((unsigned int)a1[i]) + 5 != v4[i] )
-    {
-      v2 = 0;
-      break;
+    private static int length;
+    
+    public static void main(final String[] array) {
+        final Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the flag: ");
+        final String next = scanner.next();
+        if (next.length() != 43) {
+            System.out.println("Oops, wrong flag!");
+            return;
+        }
+        final String substring = next.substring(0, Sekai.length);
+        final String substring2 = next.substring(Sekai.length, next.length() - 1);
+        final String substring3 = next.substring(next.length() - 1);
+        if (substring.equals("SEKAI{") && substring3.equals("}")) {
+            assert substring2.length() == Sekai.length * Sekai.length;
+            if (solve(substring2)) {
+                System.out.println("Congratulations, you got the flag!");
+            }
+            else {
+                System.out.println("Oops, wrong flag!");
+            }
+        }
+        else {
+            System.out.println("Oops, wrong flag!");
+        }
     }
-    v2 = 1;
-  }
-  if ( v2 == 1 )
-    result = puts("Congrats ! You found the right license key.");
-  else
-    result = puts("Invalid license key. Please try again.");
-  return result;
+    
+    public static String encrypt(final char[] array, final int n) {
+        final char[] data = new char[Sekai.length * 2];
+        int n2 = Sekai.length - 1;
+        int length = Sekai.length;
+        for (int i = 0; i < Sekai.length * 2; ++i, ++i) {
+            data[i] = array[n2--];
+            data[i + 1] = array[length++];
+        }
+        for (int j = 0; j < Sekai.length * 2; ++j) {
+            final char[] array2 = data;
+            final int n3 = j;
+            array2[n3] ^= (char)n;
+        }
+        return String.valueOf(data);
+    }
+    
+    public static char[] getArray(final char[][] array, final int n, final int n2) {
+        final char[] array2 = new char[Sekai.length * 2];
+        int n3 = 0;
+        for (int i = 0; i < Sekai.length; ++i) {
+            array2[n3] = array[n][i];
+            ++n3;
+        }
+        for (int j = 0; j < Sekai.length; ++j) {
+            array2[n3] = array[n2][Sekai.length - 1 - j];
+            ++n3;
+        }
+        return array2;
+    }
+    
+    public static char[][] transform(final char[] array, final int n) {
+        final char[][] array2 = new char[n][n];
+        for (int i = 0; i < n * n; ++i) {
+            array2[i / n][i % n] = array[i];
+        }
+        return array2;
+    }
+    
+    public static boolean solve(final String s) {
+        final char[][] transform = transform(s.toCharArray(), Sekai.length);
+        for (int i = 0; i <= Sekai.length / 2; ++i) {
+            for (int j = 0; j < Sekai.length - 2 * i - 1; ++j) {
+                final char c = transform[i][i + j];
+                transform[i][i + j] = transform[Sekai.length - 1 - i - j][i];
+                transform[Sekai.length - 1 - i - j][i] = transform[Sekai.length - 1 - i][Sekai.length - 1 - i - j];
+                transform[Sekai.length - 1 - i][Sekai.length - 1 - i - j] = transform[i + j][Sekai.length - 1 - i];
+                transform[i + j][Sekai.length - 1 - i] = c;
+            }
+        }
+        return "oz]{R]3l]]B#50es6O4tL23Etr3c10_F4TD2".equals(invokedynamic(makeConcatWithConstants:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;, encrypt(getArray(transform, 0, 5), 2), encrypt(getArray(transform, 1, 4), 1), encrypt(getArray(transform, 2, 3), 0)));
+    }
+    
+    static {
+        Sekai.length = (int)Math.pow(2.0, 3.0) - 2;
+    }
 }
 ```
 
