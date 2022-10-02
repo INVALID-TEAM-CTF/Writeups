@@ -8,9 +8,8 @@ Original description: Welcome to the first lab of Course ML10001 from Sekai Univ
 # Introduction
 У нас есть [файл.class](https://github.com/INVALID-TEAM-CTF/Writeups/blob/main/CTF_2022/SekaiCTF%202022/Reverse%20Engineering/Matrix%20Lab%201/Matrix_Lab_1.class).
 
-.class относится к java. Воспользуемся онлайн [декомпилятором](http://www.javadecompilers.com/)
+.class относится к java. Воспользуемся онлайн [декомпилятором](http://www.javadecompilers.com/) и получим код:
 
-# Анализ кода
 
 ```import java.util.Scanner;
 
@@ -100,6 +99,14 @@ public class Sekai
     }
 }
 ```
+
+# Анализ кода
+
+1. Длинна строки=43;
+2. Первые 6 символов="SEKAI{";
+3. Последний символ="}";
+4. Sekai.length=6(видим это в конце кода);
+5. Переменная substring2 содержит строки, которые находяться между скобками {   }
 
 # Solution script
 Сценарий реализации решения можно найти [здесь](https://github.com/silver12-A/Writeups/blob/main/CTF_2022/BDSec_CTF_2022/Reverse%20Engineering/BDSec%20License%20Checker%200x1/solver.py).
