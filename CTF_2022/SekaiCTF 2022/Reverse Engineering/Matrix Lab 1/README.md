@@ -112,8 +112,8 @@ public class Sekai
 
 # Solution script
 Для решения вызова используем z3-solver.
-Перепишем действия, которые выполняются в методе solve и зададим условия.
-Сценарий реализации решения можно найти [здесь](https://github.com/silver12-A/Writeups/blob/main/CTF_2022/BDSec_CTF_2022/Reverse%20Engineering/BDSec%20License%20Checker%200x1/solver.py).
+Перепишем действия, которые выполняются в методе solve() и зададим условие.
+Сценарий реализации решения можно найти [здесь](https://github.com/INVALID-TEAM-CTF/Writeups/blob/main/CTF_2022/SekaiCTF%202022/Reverse%20Engineering/Matrix%20Lab%201/Matrix.py).
 
 
-flag is: BDSEC{1c3n53_ch3ck3r_0x1_2022}
+flag is: SEKAI{m4tr1x_d3cryP710N_15_Fun_M4T3_@2D2D!}
