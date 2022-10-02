@@ -14,10 +14,6 @@ Original description: Welcome to the first lab of Course ML10001 from Sekai Univ
 
 ```import java.util.Scanner;
 
-// 
-// Decompiled by Procyon v0.5.36
-// 
-
 public class Sekai
 {
     private static int length;
