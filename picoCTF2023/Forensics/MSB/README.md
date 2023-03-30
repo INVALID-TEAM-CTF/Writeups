@@ -13,7 +13,6 @@ This image passes LSB statistical analysis, but we can't help but think there mu
 What's causing the 'corruption' of the image?
 
 # Introduction
-The description and name of challenge suggests data may be hidden in the Most Significant Bit (MSB) of the RGB pixels values within the image.
 
 Поиск в Google позволил найти инструмент python `sigBits.py, который может извлекать данные из LSB и MSB для анализа.
    
