@@ -13,13 +13,13 @@ Have you checked the content of the /root folder
 
 Find a way to add more instructions to the ls
 
-# Introduction
-
-Поиск в Google позволил найти инструмент python `sigBits.py, который может извлекать данные из LSB и MSB для анализа.
    
 ## Solution ##
  
-python sigBits.py -t=msb Ninja-and-Prince-Genji-Ukiyoe-Utagawa-Kunisada.flag.png
+Запускаем ./bin
+
+![image](https://user-images.githubusercontent.com/55994705/229237375-9fffd2cf-56c3-4a4b-bb26-49b2c90adc0b.png)
+
 
 picoCTF{15_y0ur_que57_qu1x071c_0r_h3r01c_b5e03bc5}
 
