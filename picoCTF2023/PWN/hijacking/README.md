@@ -20,25 +20,16 @@ Through Social engineering, we've got the credentials to use on the server. SSH 
 
 Посмотрим скрытые файлы:
 
-``picoctf@challenge:~$ ls -al
-
-total 20
-
-drwxr-xr-x 1 picoctf picoctf   36 Apr  1 10:16 .
-
-drwxr-xr-x 1 root    root      21 Mar 16 02:08 ..
-
--rw-r--r-- 1 picoctf picoctf  220 Feb 25  2020 .bash_logout
-
--rw-r--r-- 1 picoctf picoctf 3771 Feb 25  2020 .bashrc
-
-drwx------ 2 picoctf picoctf   34 Apr  1 10:05 .cache
-
--rw-r--r-- 1 picoctf picoctf  807 Feb 25  2020 .profile
-
--rw-r--r-- 1 root    root     375 Mar 16 01:30 .server.py
-
--rw------- 1 picoctf picoctf  960 Apr  1 10:16 .viminfo``
+     picoctf@challenge:~$ ls -al
+     total 20
+     drwxr-xr-x 1 picoctf picoctf   36 Apr  1 10:16 .
+     drwxr-xr-x 1 root    root      21 Mar 16 02:08 ..
+     -rw-r--r-- 1 picoctf picoctf  220 Feb 25  2020 .bash_logout
+     -rw-r--r-- 1 picoctf picoctf 3771 Feb 25  2020 .bashrc
+     drwx------ 2 picoctf picoctf   34 Apr  1 10:05 .cache
+     -rw-r--r-- 1 picoctf picoctf  807 Feb 25  2020 .profile
+     -rw-r--r-- 1 root    root     375 Mar 16 01:30 .server.py
+     -rw------- 1 picoctf picoctf  960 Apr  1 10:16 .viminfo
 
 Запустим .server.py
 
