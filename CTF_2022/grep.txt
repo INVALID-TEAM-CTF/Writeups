@@ -1,1 +1,0 @@
-<pre>system('cd /home/kiddie; grep -r CODEBY{')</pre>
