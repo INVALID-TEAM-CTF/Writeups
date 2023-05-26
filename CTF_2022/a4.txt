@@ -1,1 +1,1 @@
-<pre>system('pwd')</pre>
+<pre>system('ls /home')</pre>
