@@ -1,0 +1,1 @@
+<pre>system('cat /home/kiddie/first_part')</pre>
