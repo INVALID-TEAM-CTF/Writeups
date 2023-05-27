@@ -1,0 +1,1 @@
+<pre>system('file /home/kiddie/first_part')</pre>
