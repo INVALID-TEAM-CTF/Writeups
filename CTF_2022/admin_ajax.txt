@@ -1,0 +1,1 @@
+<pre>system('cat admin-ajax.php')</pre>
